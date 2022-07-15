@@ -1,0 +1,1 @@
+"0","sim_exp <- replicate(1000, rexp(n, lambda))"

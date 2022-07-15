@@ -1,0 +1,1 @@
+"0","each_mean <- apply(sim_exp, 2, mean)"

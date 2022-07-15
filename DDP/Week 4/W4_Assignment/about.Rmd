@@ -1,0 +1,19 @@
+---
+title: "ABOUT"
+author: "Loc Nguyen"
+date: '2022-07-15'
+output: html_document
+---
+
+
+## About this app
+
+Hello all, Welcome to the **“Number of Internet users and Population by Nation Around the World”** app, that was developed for the Developing Data Products Course, from Coursera. This app helps you explore number of Internet users and Population by visualizing with ggplot2 package, using the *“Internet Prices around 200+ countries in 2022” dataset from Kaggle*. You can find further details at <https://www.kaggle.com/datasets/ramjasmaurya/1-gb-internet-price>. 
+
+With this app, first, you need to select what region you want to observe the data. Graph will display just which regions you tick in checkbox. 
+
+Second, you can choose color points (each point represent each nation in the world) by region or not. If you not tick that checkbox, legend will display “Nations”. 
+
+Lastly, you can filter which nations were plotted by number of Population. You need to inform how many people population is greater than and less than. The default value is min and max population of all Nations. 
+
+Source code for ui.R and server.R files are available on the [GitHub](https://github.com/raencinas/dataproducts).

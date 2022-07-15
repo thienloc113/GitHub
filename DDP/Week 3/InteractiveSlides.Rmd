@@ -1,0 +1,55 @@
+---
+title: "DDP | W3 Assignment"
+author: "Loc Nguyen"
+date: '2022-07-13'
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+## Objectives
+
+- Create a web page presentation using R Markdown that features a plot created with Plotly. 
+- Host your webpage on either GitHub Pages, RPubs, or NeoCities. 
+- Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. We would love to see you show off your creativity! 
+
+For further detail: <https://www.coursera.org/learn/data-products/peer/a1Uy9/r-markdown-presentation-plotly>
+
+## Review criteria
+
+- Does the web page feature a date and is this date **less than two months** before the date that you're grading this assignment?
+
+- Is the web page a presentation and does it feature an **interactive plot** that appears to have been created with *Plotly*?
+
+## Description
+
+- In this report, I will plot prices and carat (from 2 to 3 carat) of diamonds by scatterplot. And color will be identified by diamonds' quality. 
+- About data, I used Diamonds dataset, which contains the prices and other attributes of almost 54,000 diamonds. For further detail, you can access <https://ggplot2.tidyverse.org/reference/diamonds.html>
+
+## Created date
+I created this assignment on
+
+```{r created_date}
+Sys.Date()
+```
+
+
+## Interactive Plot by plotly package (1/2)
+- First, I load **plotly package**
+
+```{r package, results='hide', message=FALSE}
+library(plotly)
+```
+- Then, I filter diamonds dataset by carat (from 2 to 3)
+
+```{r filter}
+data <- filter(diamonds, carat>2, carat<3)
+```
+## Interactive Plot by plotly package (2/2)
+```{r plot}
+plot_ly(data, x= ~price, y = ~carat, color = ~cut, type = "scatter", mode = "markers")
+```
+
+##Thank you!!

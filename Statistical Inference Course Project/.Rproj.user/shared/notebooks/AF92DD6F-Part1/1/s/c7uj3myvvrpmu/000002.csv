@@ -1,0 +1,5 @@
+"0","      ggplot() + geom_histogram(aes(x = each_mean), bins = 15, alpha = 0.5"
+"0","                                , color=""black"") + "
+"0","            geom_vline(aes(xintercept = theory_mean),col = 'red') + "
+"0","            geom_vline(aes(xintercept = sam_mean), col = ""blue"") + "
+"0","            labs(x = ""Means"", y = ""Frequency"", title = ""Exponential Function Simulations"")"

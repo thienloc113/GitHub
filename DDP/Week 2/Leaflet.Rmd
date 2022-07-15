@@ -1,0 +1,68 @@
+---
+title: "DDP_Ass2_MyLeaflet"
+author: "Loc Nguyen"
+date: '2022-07-13'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Objectives
+
+Create a web page using R Markdown that features a map created with Leaflet. 
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity! 
+
+For further detail: <https://www.coursera.org/learn/data-products/peer/NLn0H/r-markdown-and-leaflet>
+
+
+## Review criteria
+
+**1. Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?**
+
+I created this assignment on
+
+```{r created_date}
+Sys.Date()
+```
+
+**2. Does the web page feature an interactive map that appears to have been created with Leaflet?**
+
+I show in map where I lived, studied and worked in Vietnam, my beloved country.
+
+```{r interactive_map}
+library(leaflet)
+my_map <- leaflet() %>%
+  addTiles() %>%
+  addMarkers(lat=10.76868, lng=106.66698, popup="My Office") %>%
+  addMarkers(lat=10.768057270983787, lng=106.69424047008869, popup="My Home") %>%
+  addMarkers(lat=10.871153329747369, lng=106.77822308965327, popup="My School");
+my_map
+
+```
+And I make some custom markers for more interesting.
+```{r custom_marker}
+
+office <- makeIcon(
+iconUrl = "https://www.freeiconspng.com/uploads/office-icon--insharepics-11.png",
+iconWidth = 31*215/230, iconHeight = 31, iconAnchorX = 31*215/230/2, iconAnchorY = 16);
+
+home <- makeIcon(
+iconUrl = "https://www.freeiconspng.com/uploads/address-building-company-home-house-office-real-estate-icon--10.png",
+iconWidth = 31*215/230, iconHeight = 31, iconAnchorX = 31*215/230/2, iconAnchorY = 16);
+
+school <- makeIcon(
+iconUrl = "https://www.freeiconspng.com/uploads/school-icon-png-7.png",
+iconWidth = 31*215/230, iconHeight = 31, iconAnchorX = 31*215/230/2, iconAnchorY = 16);
+
+my_map <- clearMarkers(my_map) %>%
+  addMarkers(lat=10.76868, lng=106.66698, popup="My Office", icon = office) %>%
+  addMarkers(lat=10.768057270983787, lng=106.69424047008869, popup="My Home", icon = home) %>%
+  addMarkers(lat=10.871153329747369, lng=106.77822308965327, popup="My School", icon = school);
+
+my_map
+```
